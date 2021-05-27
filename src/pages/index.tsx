@@ -48,7 +48,7 @@ export default function Home(): JSX.Element {
   });
 
   const formattedData = useMemo(() => {
-    return data?.pages.flatMap(item => item);
+    return data?.pages.flatMap<CardProps>(item => item.data);
   }, [data]);
 
   if (isLoading) return <Loading />;
